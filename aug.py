@@ -4,7 +4,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 import librosa
 from tqdm import tqdm
-
+import streamlit as st
+from faud import display_spectrogram
 
 def augment_signal(
     signal,
@@ -34,8 +35,7 @@ def augment_signal(
 
 
 if __name__ == "__main__":
-  import streamlit as st
-  from faud import display_spectrogram
+
   st.markdown("## Audio augmentations")
   example_aud, sr = librosa.load('wait a minute.mp3')
   example_aud = librosa.resample(example_aud, sr, 16000)
